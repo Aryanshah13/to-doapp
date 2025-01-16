@@ -169,7 +169,7 @@ const App = () => {
       </ul>
       <button onClick={deleteAllTasks} className="clearAllButton">Clear All Tasks</button>
       <div className="footer">
-        <p>&copy; 2023 Todo App. <button className="linkButton" onClick={() => alert('Help link clicked!')}>Help</button></p>
+        <p>&copy; Aryan Shah 2025 Todo App. <button className="linkButton" onClick={() => alert('Help link clicked!')}>Help</button></p>
       </div>
     </div>
   );
