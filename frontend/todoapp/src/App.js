@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -9,18 +9,20 @@ const App = () => {
   const [editTaskText, setEditTaskText] = useState({ text: '', status: '' });
   const [filter, setFilter] = useState('All');
 
-  useEffect(() => {
-    fetchTasks();
-  }, []);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
-  const fetchTasks = async () => {
+  const fetchTasks = useCallback(async () => {
     try {
-      const response = await axios.get('https://to-doappbackend-qqjk.onrender.com');
+      const response = await axios.get(apiUrl);
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
     }
-  };
+  }, [apiUrl]);
+
+  useEffect(() => {
+    fetchTasks();
+  }, [fetchTasks]);
 
   const addTask = async () => {
     if (!newTask) return;
@@ -28,7 +30,7 @@ const App = () => {
     setTasks([...tasks, newTaskObj]);
     setNewTask('');
     try {
-      await axios.post('http://localhost:8000/todos/', { task: newTask, status: 'in-progress' });
+      await axios.post(`${apiUrl}/todos/`, { task: newTask, status: 'in-progress' });
       fetchTasks();
     } catch (error) {
       console.error('Error adding task:', error);
@@ -55,7 +57,7 @@ const App = () => {
     setEditTaskId(null);
     setEditTaskText({ text: '', status: '' });
     try {
-      await axios.put(`http://localhost:8000/todos/${id}`, { task: editTaskText.text, status: editTaskText.status });
+      await axios.put(`${apiUrl}/todos/${id}`, { task: editTaskText.text, status: editTaskText.status });
       fetchTasks();
     } catch (error) {
       console.error('Error editing task:', error);
@@ -66,7 +68,7 @@ const App = () => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasks(updatedTasks);
     try {
-      await axios.delete(`http://localhost:8000/todos/${id}`);
+      await axios.delete(`${apiUrl}/todos/${id}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
@@ -76,7 +78,7 @@ const App = () => {
   const deleteAllTasks = async () => {
     setTasks([]);
     try {
-      await axios.delete('http://localhost:8000/todos/');
+      await axios.delete(`${apiUrl}/todos/`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting all tasks:', error);
@@ -99,7 +101,7 @@ const App = () => {
     setTasks(updatedTasks);
 
     try {
-      await axios.put(`http://localhost:8000/todos/${id}`, {
+      await axios.put(`${apiUrl}/todos/${id}`, {
         task: taskToUpdate.task,
         status: updatedStatus,
       });
