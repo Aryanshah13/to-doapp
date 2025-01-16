@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e0f7fa; /* Light cyan background color */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #00796b;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 10px;
+  font-size: 1em;
+  margin-right: 10px;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.addButton {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007BFF; /* Blue */
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.taskList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.taskItem:hover {
+  background-color: #f9f9f9;
+}
+
+.taskText {
+  flex: 1;
+  text-align: left;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.editButton {
+  background-color: #FFC107; /* Amber */
+  color: white;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  padding: 10px 20px; /* Increased size */
+  font-size: 1.2em; /* Increased font size */
+}
+
+.editButton:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+  transform: scale(1.05);
+}
+
+.deleteButton {
+  background-color: #DC3545; /* Red */
+  color: white;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  padding: 10px 20px; /* Increased size */
+  font-size: 1.2em; /* Increased font size */
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+  transform: scale(1.05);
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.footer a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filterButton {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #6c757d; /* Gray */
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  margin: 0 5px;
+}
+
+.filterButton:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+  transform: scale(1.05);
+}
+
+.clearAllButton {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #17A2B8; /* Teal */
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.clearAllButton:hover {
+  background-color: #138496;
+  border-color: #138496;
+  transform: scale(1.05);
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #007BFF;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+
+.linkButton:hover {
+  text-decoration: none;
+}
+
+.statusButton {
+  background-color: #28A745; /* Green */
+  color: white;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  padding: 10px 20px; /* Increased size */
+  font-size: 1.2em; /* Increased font size */
+}
+
+.statusButton:hover {
+  background-color: #218838;
+  border-color: #218838;
+  transform: scale(1.05);
+}
+.select {
+  padding: 10px;
+  font-size: 1em;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.saveButton {
+  background-color: #28A745; /* Green */
+  color: white;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  padding: 10px 20px; /* Increased size */
+  font-size: 1.2em; /* Increased font size */
+}
+
+.saveButton:hover {
+  background-color: #218838;
+  border-color: #218838;
+  transform: scale(1.05);
+}
+
+.filterButton.active {
+  background-color: #007BFF;
+  border-color: #0056b3;
+  color: white;
+}
