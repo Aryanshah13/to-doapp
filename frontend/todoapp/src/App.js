@@ -15,7 +15,7 @@ const App = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/todos/');
+      const response = await axios.get('https://to-doappbackend-qqjk.onrender.com');
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
