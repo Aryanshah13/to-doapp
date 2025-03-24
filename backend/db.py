@@ -3,7 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Replace with your actual DATABASE_URL
-DATABASE_URL = "postgresql+asyncpg:postgresql://todouser:tZY4odfkTxYM6Rcty6PRSONwLDR4EyUI@dpg-cvgopdiqgecs73f060l0-a.oregon-postgres.render.com/todo_mnwq"
+DATABASE_URL = "postgresql+asyncpg://todouser:CfVpp6QLs0q4QNRTWNSJrVx3Se8h8n95@dpg-cvgou9ofnakc73d7p6mg-a.oregon-postgres.render.com/todo_1p3k"
+
 
 
 # Create the async engine
